@@ -11,10 +11,25 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For n = 152, the output should be 52
  *
  */
+
+
+
 function deleteDigit(n) {
   // throw new NotImplementedError('Not implemented');
+  let numbers = n.toString().split('')
+  let max = 0;
 
+  for (let i = 0; i < numbers.length; i++) {
+    let arr = [...numbers]
+    delete arr[i]
+    let summ = arr.reduce((acc, item) => {
+      return acc + item;
+    })
 
+     max = Math.max(max , summ)
+  }
+
+  return max
 }
 console.log(deleteDigit(1001))
 
