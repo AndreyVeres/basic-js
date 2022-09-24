@@ -19,20 +19,25 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 function repeater(str, options) {
   // throw new NotImplementedError('Not implemented');
-
-  let { repeatTimes, separator, addition, additionRepeatTimes, additionSeparator } = options;
-
+  let localStr = str
   
-  // if (typeof str !== 'string') str.toString()
+  if(str === null) localStr = 'null'
+  let { repeatTimes, separator , addition, additionRepeatTimes, additionSeparator } = options;
+  
+  console.log(typeof null)
+  
   if (typeof addition === 'boolean') addition = addition + ''
-  if (typeof addition === null) {
 
-  }
 
-  let additionStr = new Array(additionRepeatTimes > 1 ? additionRepeatTimes : 1).fill(addition ? addition : '').join(additionSeparator ? additionSeparator : '')
-  let completedStr = new Array(repeatTimes > 1 ? repeatTimes : 1).fill(str + additionStr).join(separator ? separator : '+')
+  let additionStr = new Array(additionRepeatTimes > 1 ? additionRepeatTimes : 1)
+    .fill(addition === null ? 'null' : addition)
+    .join(additionSeparator ? additionSeparator : '|')
 
-  return completedStr
+  return completedStr = new Array(repeatTimes > 1 ? repeatTimes : 1)
+    .fill(localStr + additionStr)
+    .join(separator ? separator : '+')
+
+
 
 }
 console.log(repeater(null, { repeatTimes: 3, separator: '??? ', addition: null, additionRepeatTimes: 3, additionSeparator: '!!!' }))
