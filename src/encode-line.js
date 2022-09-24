@@ -15,7 +15,6 @@ function encodeLine(str) {
   let counter = 1;
   let result = ''
   for (let i = 0; i < str.length; i++) {
-
     if (str[i] === str[i + 1]) {
       counter++
       continue;
@@ -64,3 +63,5 @@ module.exports = {
 //   }
 //   return result
 // }
+
+

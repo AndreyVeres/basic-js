@@ -18,19 +18,29 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 
 function repeater(str, options) {
-  throw new NotImplementedError('Not implemented');
- 
+  // throw new NotImplementedError('Not implemented');
+
+  let { repeatTimes, separator, addition, additionRepeatTimes, additionSeparator } = options;
+
+  
+  // if (typeof str !== 'string') str.toString()
+  if (typeof addition === 'boolean') addition = addition + ''
+  if (typeof addition === null) {
+
+  }
+
+  let additionStr = new Array(additionRepeatTimes > 1 ? additionRepeatTimes : 1).fill(addition ? addition : '').join(additionSeparator ? additionSeparator : '')
+  let completedStr = new Array(repeatTimes > 1 ? repeatTimes : 1).fill(str + additionStr).join(separator ? separator : '+')
+
+  return completedStr
+
 }
-// console.log(repeater('la', { repeatTimes: 3, separator: 's', addition: '+', additionRepeatTimes: 1 }), 'la+sla+sla+');
-// console.log(repeater('LALA', { repeatTimes: 3, separator: 's', addition: '++', additionRepeatTimes: 1 }), 'LALA++sLALA++sLALA++');
+console.log(repeater(null, { repeatTimes: 3, separator: '??? ', addition: null, additionRepeatTimes: 3, additionSeparator: '!!!' }))
 
-// console.log(repeater('la', { repeatTimes: 3 }), 'la+la+la');
-// console.log(repeater('single', { repeatTimes: 1 }), 'single');
-// console.log(repeater('12345', { repeatTimes: 5 }), '12345+12345+12345+12345+12345');
 
-// console.log(repeater('la', { repeatTimes: 3, separator: 's' }), 'laslasla');
-// console.log(repeater('point', { repeatTimes: 3, separator: '&&&' }), 'point&&&point&&&point');
-// console.log(repeater('12345', { repeatTimes: 5, separator: '3 words separator' }), '123453 words separator123453 words separator123453 words separator123453 words separator12345');
+
+
+
 
 
 
