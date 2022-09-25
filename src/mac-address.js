@@ -22,8 +22,6 @@ function isMAC48Address(n) {
  
   for (let i = 0; i < items.length; i++) {
     if(!parseInt(items[i] , 16) && parseInt(items[i] , 16) !== 0) return false
-    console.log(parseInt('00' , 16))
-
   }
 
   return true
@@ -35,6 +33,7 @@ console.log(isMAC48Address('00-1B-63-84-45-E6'), true);
 
 
 console.log(isMAC48Address('FF-FF-FF-FF-FF-FF'), true);
+
 console.log(isMAC48Address('not a MAC-48 address'), false);
 
 

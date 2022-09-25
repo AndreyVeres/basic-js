@@ -1,7 +1,6 @@
 const { assert } = require('chai');
 const { testOptional } = require('../extensions/index.js');
 const { isMAC48Address } = require('../src/mac-address.js');
-
 it.optional = testOptional;
 
 Object.freeze(assert);

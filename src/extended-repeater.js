@@ -24,10 +24,7 @@ function repeater(str, options) {
   if(str === null) localStr = 'null'
   let { repeatTimes, separator , addition, additionRepeatTimes, additionSeparator } = options;
   
-  console.log(typeof null)
-  
   if (typeof addition === 'boolean') addition = addition + ''
-
 
   let additionStr = new Array(additionRepeatTimes > 1 ? additionRepeatTimes : 1)
     .fill(addition === null ? 'null' : addition)
