@@ -11,11 +11,34 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  * The result should be [-1, 150, 160, 170, -1, -1, 180, 190]
  */
-function sortByHeight(/* arr */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+
+
+function sortByHeight(arr) {
+   throw new NotImplementedError('Not implemented');
+
+  // let map = arr.map((value, index) => {
+  //   return { index: i, value: item }
+  // })
+
+  // map.sort((a,b) => {
+  //   if(map[a] === -1) 
+  // })
 }
+
+
 
 module.exports = {
   sortByHeight
 };
+
+
+
+// массив для сортировки
+var list = ['Дельта', 'альфа', 'ЧАРЛИ', 'браво'];
+
+// временный массив содержит объекты с позицией и значением сортировки
+var mapped = list.map(function (el, i) {
+  return { index: i, value: el.toLowerCase() };
+});
+
+console.log(mapped)
