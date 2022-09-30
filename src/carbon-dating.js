@@ -23,7 +23,7 @@ function dateSample(SsampleActivity) {
   if (arguments.length === 0) return false
   if (typeof SsampleActivity !== 'string') return false
   if (!SsampleActivity) return false
-  // if (parseInt(SsampleActivity).toString().length !== SsampleActivity.length) return false
+
 }
 module.exports = {
   dateSample

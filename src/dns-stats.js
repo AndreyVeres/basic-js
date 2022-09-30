@@ -46,10 +46,6 @@ function getDNSStats(domains) {
   return result
 }
 
-// console.log(getDNSStats(['epam.com']))
-// console.log(getDNSStats(['epam.com', 'info.epam.com']),
-//   { '.com': 2, '.com.epam': 2, '.com.epam.info': 1 });
-// console.log(getDNSStats([]), {});
 
 module.exports = {
   getDNSStats

@@ -13,7 +13,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 
 let arr = [-1, 150, 190, 170, -1, -1, 160, 180]
-// -1,  -1,  -1, 150,160, 170, 180, 190
+
 function sortByHeight(arr) {
   //  throw new NotImplementedError('Not implemented');
   let sorted = [...arr].sort((a, b) => a - b)
@@ -29,13 +29,7 @@ function sortByHeight(arr) {
     if(arr[i] < 0){
       sorted.splice(i , 0 , -1)
     }
-    // if(sorted[i] === arr[i]) continue
-    // if(sorted[i] < 0) {
-    //   sorted.splice(i , 1)
-    // }
-    // if(arr[i] < 0 && sorted[i] > 0){
-    //   sorted.splice(i , 0 , -1)
-    // }
+
   }
 return sorted
 }
