@@ -17,7 +17,7 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 
 function calculateHanoi(disksNumber, turnsSpeed) {
-  // throw new NotImplementedError('Not implemented');
+  throw new NotImplementedError('Not implemented');
   let turns = 0;
   let firstPillar = [];
   let secondPillar = []
@@ -40,7 +40,7 @@ function calculateHanoi(disksNumber, turnsSpeed) {
   return firstPillar
 }
 
-console.log(calculateHanoi(5, 10))
+// console.log(calculateHanoi(5, 10))
 
 module.exports = {
   calculateHanoi
