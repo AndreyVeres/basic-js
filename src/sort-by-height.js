@@ -12,19 +12,35 @@ const { NotImplementedError } = require('../extensions/index.js');
  * The result should be [-1, 150, 160, 170, -1, -1, 180, 190]
  */
 
-
+let arr = [-1, 150, 190, 170, -1, -1, 160, 180]
+// -1,  -1,  -1, 150,160, 170, 180, 190
 function sortByHeight(arr) {
-   throw new NotImplementedError('Not implemented');
+  //  throw new NotImplementedError('Not implemented');
+  let sorted = [...arr].sort((a, b) => a - b)
 
-  // let map = arr.map((value, index) => {
-  //   return { index: i, value: item }
-  // })
-
-  // map.sort((a,b) => {
-  //   if(map[a] === -1) 
-  // })
+  for (let i = 0; i < sorted.length; i++) {
+    if (sorted[i] < 0) {
+      sorted.splice(i, 1)
+      i--
+    }
+  }
+ 
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i] < 0){
+      sorted.splice(i , 0 , -1)
+    }
+    // if(sorted[i] === arr[i]) continue
+    // if(sorted[i] < 0) {
+    //   sorted.splice(i , 1)
+    // }
+    // if(arr[i] < 0 && sorted[i] > 0){
+    //   sorted.splice(i , 0 , -1)
+    // }
+  }
+return sorted
 }
 
+console.log(sortByHeight(arr))
 
 
 module.exports = {
@@ -33,12 +49,3 @@ module.exports = {
 
 
 
-// массив для сортировки
-var list = ['Дельта', 'альфа', 'ЧАРЛИ', 'браво'];
-
-// временный массив содержит объекты с позицией и значением сортировки
-var mapped = list.map(function (el, i) {
-  return { index: i, value: el.toLowerCase() };
-});
-
-console.log(mapped)
