@@ -14,9 +14,16 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 
 let date = new Date(2030, 27, 1, 18, 36, 41, 841)
+// console.log(Object.prototype.toString.call(date.getDay))
+// console.log(Object.prototype.toString.call(date) === '[Object date]')
 
+// console.log(Object.prototype.toString(date))
 function getSeason(date) {
- 
+
+  // if((Object.prototype.toString.call(date.getDay) !== '[object Function]') || 
+  // Object.prototype.toString.call(date) !== '[object Date]') throw new Error('Invalid date!')
+
+
   if (arguments.length < 1) return 'Unable to determine the time of year!';
   // if(!date instanceof Date) throw new Error('Invalid date!')
   // let { y, m, d } = date;
